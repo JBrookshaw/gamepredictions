@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 class ScheduleController(val scheduleService: ScheduleService) {
 
     @GetMapping("/schedule")
-    fun getMessage(): Schedule {
+    fun getSchedule(): Schedule {
         return scheduleService.getSchedule()
     }
 }
