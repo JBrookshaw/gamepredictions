@@ -6,8 +6,7 @@ import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.getForObject
 
 @Component
-class EspnClient {
-    private val restTemplate = RestTemplate()
+class EspnClient(val restTemplate: RestTemplate) {
 
     val url = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 

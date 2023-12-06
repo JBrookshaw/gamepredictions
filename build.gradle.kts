@@ -5,6 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.4"
 	kotlin("jvm") version "1.9.20"
 	kotlin("plugin.spring") version "1.9.20"
+	id("groovy")
 }
 
 group = "com.jeff"
@@ -16,6 +17,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
@@ -27,6 +29,9 @@ dependencies {
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.codehaus.groovy:groovy-all:3.0.19")
+	testImplementation("org.spockframework:spock-core:2.4-M1-groovy-3.0")
+	testImplementation("org.spockframework:spock-spring:2.4-M1-groovy-3.0")
 }
 
 tasks.withType<KotlinCompile> {
